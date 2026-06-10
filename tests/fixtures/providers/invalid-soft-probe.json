@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "providers": [
+    { "id": "soft-bad", "label": "Bad", "tier": 1, "skillsProfile": "soft-bad", "detect": [{ "kind": "directory", "value": "~/.bad" }], "soft": false, "projectPath": ".bad/skills", "globalPath": "~/.bad/skills", "officialDocs": ["https://example.com"] }
+  ]
+}

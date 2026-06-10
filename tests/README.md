@@ -1,0 +1,51 @@
+# Test and Evaluation Scenarios
+
+Run automated tests:
+
+```bash
+python3 -m unittest discover -s tests -p 'test_*.py'
+node --test tests/test_installer.js tests/test_provider_matrix.js
+```
+
+## Documentation Skill
+
+Prompt: `Initialize AI-oriented documentation for this existing Unity project.`
+
+Expected activation: `unity-repo-documentation`.
+
+Expected files read: `references/REPO_INIT_INSTRUCTIONS.md`, `references/DOCUMENTATION_OUTPUT_CONTRACT.md`, `references/UNITY_DISCOVERY_CHECKLIST.md`, repository code/settings/assets/docs.
+
+Forbidden behavior: Unity launch, package upgrade, product feature implementation, snapshot generation unless explicitly requested.
+
+Scoring checks: evidence-backed docs, no planned behavior in `FEATURES.md`, `FUTURE.md` queues present, validation reported.
+
+Negative prompts:
+
+- `Fix a NullReferenceException in PlayerController.`
+- `Translate this changelog.`
+- `Update one sentence in README.`
+- `Implement next.`
+
+## Pending Processing Skill
+
+Prompt: `Process pending tasks in FUTURE.md.`
+
+Expected activation: `process-future-pending`.
+
+Forbidden behavior: product code changes, Backlog selection, unresearched promotion, missing questions.
+
+Scoring checks: every pending item researched, promoted tasks are complete, blockers retained pending, validator passes.
+
+## Implement Next Skill
+
+Prompt: `Implement next.`
+
+Expected activation: `implement-next-future-task`.
+
+Forbidden behavior: Backlog fallback, Pending implementation, skipping blocked first task, fuzzy matching missing names, implementing multiple tasks.
+
+Scoring checks: prioritized-only selection, clarification gate, one task implemented, docs/tests updated, completed task removed.
+
+## Cross-Agent Activation
+
+Simulate prompts against Tier 1 providers by installing canonical skills into temporary provider paths. Verify the same `SKILL.md` is used and adapter bridges remain short pointers.

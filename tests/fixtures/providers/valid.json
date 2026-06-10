@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "tier1Required": ["codex"],
+  "providers": [
+    {
+      "id": "codex",
+      "label": "OpenAI Codex",
+      "tier": 1,
+      "skillsProfile": "codex",
+      "detect": [{ "kind": "command", "value": "codex" }],
+      "soft": false,
+      "projectPath": ".agents/skills",
+      "globalPath": "~/.codex/skills",
+      "officialDocs": ["https://developers.openai.com/codex/skills"]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "providers": [
+    { "id": "codex", "label": "A", "tier": 1, "skillsProfile": "codex", "detect": [], "soft": false, "projectPath": ".agents/skills", "globalPath": "~/.codex/skills", "officialDocs": ["https://example.com"] },
+    { "id": "codex", "label": "B", "tier": 1, "skillsProfile": "codex", "detect": [], "soft": false, "projectPath": ".agents/skills", "globalPath": "~/.codex/skills", "officialDocs": ["https://example.com"] }
+  ]
+}
