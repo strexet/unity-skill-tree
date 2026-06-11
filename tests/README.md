@@ -36,7 +36,7 @@ Fixtures: `tests/fixtures/documentation-audit/`.
 
 Forbidden behavior: product code refactors, docs-only comparison without code inspection, duplicate backlog issue creation, future-work sections in `FEATURES.md`.
 
-Scoring checks: baseline docs verified, stale claims repaired, missing docs recreated from evidence, meaningful discovered issues added or merged in `FUTURE.md`, audit summary reports inspected context.
+Scoring checks: baseline docs verified, stale claims repaired, missing docs recreated from evidence, meaningful discovered issues added or merged in `FUTURE.md` Backlog, audit summary reports inspected context.
 
 ## Pending Processing Skill
 

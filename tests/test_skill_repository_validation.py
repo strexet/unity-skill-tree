@@ -47,8 +47,20 @@ class SkillRepositoryValidationTests(unittest.TestCase):
         text = AUDIT_SKILL.read_text(encoding="utf-8")
         self.assertIn("MUST NOT audit docs by comparing documents only", text)
         self.assertIn("Recreate missing required docs from current repository evidence", text)
-        self.assertIn("Add meaningful findings to active `FUTURE.md` backlog", text)
+        self.assertIn("Add meaningful findings to active `FUTURE.md` Backlog", text)
+        self.assertIn("Do not add documentation/audit findings to Pending Queue", text)
         self.assertIn("`FEATURES.md`: current implemented", text)
+
+    def test_future_contract_routes_documentation_findings_to_backlog(self):
+        source = (ROOT / "REPO_INIT_INSTRUCTIONS.md").read_text(encoding="utf-8")
+        generated = (ROOT / "skills/skill-tree-process-future-pending/references/FUTURE_TASK_STANDARD.md").read_text(encoding="utf-8")
+        for text in (source, generated):
+            with self.subTest(source=text[:20]):
+                self.assertIn("Do not put issues discovered during Unity documentation initialization or documentation audit in `Pending Queue`", text)
+                self.assertIn("Use `Backlog` for issues discovered while creating or auditing documentation", text)
+                self.assertIn("- Task title\n  - Description", text)
+                self.assertIn("Unity/game behavior", text)
+                self.assertIn("Data/model behavior", text)
 
     def test_unity_inventory_and_docs_validation(self):
         with tempfile.TemporaryDirectory() as tmp:

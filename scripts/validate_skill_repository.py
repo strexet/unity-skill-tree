@@ -251,8 +251,12 @@ def check_behavior(repo: Path) -> list[str]:
         errors.append("documentation audit skill does not require code-aware audit")
     if "Recreate missing required docs from current repository evidence" not in audit:
         errors.append("documentation audit skill does not recreate missing docs from evidence")
-    if "Add meaningful findings to active `FUTURE.md` backlog" not in audit:
+    if "Add meaningful findings to active `FUTURE.md` Backlog" not in audit:
         errors.append("documentation audit skill does not add issues to FUTURE")
+    if "Do not add documentation/audit findings to Pending Queue" not in doc:
+        errors.append("documentation skill does not forbid Pending for discovered findings")
+    if "Do not add documentation/audit findings to Pending Queue" not in audit:
+        errors.append("documentation audit skill does not forbid Pending for discovered findings")
     return errors
 
 

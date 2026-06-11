@@ -12,6 +12,8 @@
 
 - Read the complete Pending Queue.
 - Preserve source context, evidence, reproduction, constraints, and requested priority.
+- If adding a new Pending item, use the nested Markdown pending task format from `references/FUTURE_TASK_STANDARD.md`.
+- Do not add documentation/audit findings to Pending Queue; those belong in Backlog.
 
 ## Research
 

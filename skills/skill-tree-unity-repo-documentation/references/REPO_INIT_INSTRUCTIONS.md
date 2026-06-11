@@ -842,7 +842,7 @@ Before finalizing documents, inspect:
 - persistence and mutation logic;
 - existing `FUTURE.md` entries.
 
-Add noteworthy findings to the active `FUTURE.md` backlog when evidence supports them. Valid findings include confirmed bugs, strongly suspected bugs, broken or risky logic, documentation/code drift, architectural issues, missing validation, missing tests, error-handling gaps, security or data-safety concerns, maintainability problems, performance risks, and dead or misleading code.
+Add noteworthy findings to the active `FUTURE.md` `Backlog` section when evidence supports them. Do not add documentation/audit findings to `Pending Queue`. Valid findings include confirmed bugs, strongly suspected bugs, broken or risky logic, documentation/code drift, architectural issues, missing validation, missing tests, error-handling gaps, security or data-safety concerns, maintainability problems, performance risks, and dead or misleading code.
 
 Each added backlog entry should include:
 
@@ -1251,7 +1251,9 @@ It must contain three distinct queues:
 
 **Pending Queue**
 
-Use for raw requests, findings, bug reports, or ideas that are not yet implementation-ready.
+Use for raw owner/user requests, rough task notes, or explicitly captured intake that is not yet implementation-ready.
+
+Do not put issues discovered during Unity documentation initialization or documentation audit in `Pending Queue`. Documentation/audit findings must go to `Backlog` unless the owner explicitly asks to treat the item as pending intake.
 
 A pending item may lack:
 
@@ -1293,6 +1295,8 @@ Every task in `Prioritized Next Changes` must contain an explicit `Questions and
 **Backlog**
 
 Use for valid but deliberately deferred work.
+
+Use `Backlog` for issues discovered while creating or auditing documentation, including confirmed bugs, strongly suspected bugs, documentation/code drift, maintainability problems, missing validation, missing tests, performance risks, security/data-safety concerns, and improvement opportunities.
 
 Backlog items may be less implementation-ready than prioritized tasks, but they should still preserve the original intent and useful evidence.
 
@@ -1730,20 +1734,41 @@ It may remain in `Prioritized Next Changes` to preserve priority, but `Implement
 
 ### 14.8 Pending item template
 
-Keep pending entries concise but preserve enough source context for later research:
+Use this format when an AI agent adds an item to `Pending Queue`. Keep the entry concise, preserve source context, and use nested Markdown lists only. Include only relevant sections.
 
 ```text
-- Priority placement: Top | Middle | Bottom | Unspecified
-- Request:
-- Source/context:
-- Evidence or reproduction:
-- Known constraints:
-- Missing information:
-- Candidate area:
-- Potentially related tasks:
+- Task title
+  - Description
+    - State what should change, why, where it applies, and what problem it solves.
+  - Current context
+    - Summarize known current behavior, relevant Unity systems, assemblies, scenes, prefabs, ScriptableObjects, settings, tests, docs, or tooling.
+  - Source verification requirements
+    - MUST inspect current project code, assets, settings, and tests before promotion when assumptions may be stale.
+    - MUST verify official Unity, package, platform, SDK, backend, store, or other external behavior before relying on it.
+    - MUST update the task if source inspection contradicts the current assumptions.
+  - Requirements
+    - List concrete, testable requirements.
+  - Unity/game behavior
+    - Describe runtime, Editor, build, platform, scene/prefab, input, UI, gameplay, content, or tool behavior when relevant.
+  - Data/model behavior
+    - Describe state, persistence, serialization, save migration, Addressables/Resources, networking, cache, backend, analytics, or mutation behavior when relevant.
+  - Edge cases
+    - Include missing data, stale data, disabled states, duplicate entries, partial failure, cancellation, concurrency, offline behavior, platform differences, or old save/config compatibility when relevant.
+  - Expected behavior
+    - Describe the final observable outcome.
+  - Suggested implementation
+    - Name likely files, symbols, assets, tests, helpers, docs, and reuse points without over-constraining the developer.
+  - Acceptance criteria
+    - List concrete checks that can be verified manually, by tests, or by code review.
+  - Tests
+    - List focused test scenarios or validation steps when logic, state, serialization, platform behavior, tooling, or important UI behavior changes.
+  - Documentation updates
+    - Name docs that likely need updates, especially `FEATURES.md`, `FUTURE.md`, `TECHNICAL.md`, `REPOSITORY_MAP.md`, `TESTING.md`, or specialized integration docs.
 ```
 
 Pending entries do not need the full questions section. The mandatory questions section is created during `Process pending tasks` or `Process pending`.
+
+Do not use vague titles such as `Fix UI`, `Improve things`, `Update page`, or `Bug`. Use short action-oriented titles. Do not add empty sections. Do not put future work in `FEATURES.md` while drafting pending items.
 
 ### 14.9 Task lifecycle
 

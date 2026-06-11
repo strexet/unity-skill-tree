@@ -22,13 +22,13 @@ Do not use it to implement product features, upgrade Unity, upgrade packages, pr
 8. Create or repair the required live documents.
 9. Keep implemented, configured, partial, disabled, deprecated, planned, assumption, and open-question states distinct.
 10. Keep `FEATURES.md` limited to current implemented or partial behavior. Put future work, plans, backlog, known bugs awaiting fixes, and deferred investigations in `FUTURE.md`.
-11. Add meaningful discovered issues to the active `FUTURE.md` backlog using the repository task structure. Merge with existing entries when same issue exists.
+11. Add meaningful discovered issues to the active `FUTURE.md` Backlog using the repository task structure. Do not add documentation/audit findings to Pending Queue. Merge with existing entries when same issue exists.
 12. Label findings as confirmed bug, strongly suspected issue, documentation inconsistency, or improvement opportunity. Include evidence, affected paths/symbols, impact, suggested direction, acceptance criteria, and focused tests where relevant.
 13. Do not present speculation as a confirmed bug. Do not add trivial style observations unless they materially affect maintainability or correctness.
 14. Do not modify Unity behavior, serialized assets, package versions, build settings, generated files, or product code as part of documentation initialization.
 15. Run `scripts/validate_unity_documentation.py` against the target repository when validation is allowed.
 16. Review the final diff for unsupported claims, secrets, broken links, snapshot-named live files, accidental Unity asset changes, stale placeholders, and planned work in `FEATURES.md`.
-17. Report created/updated docs, drift corrected, issues added to backlog, potential issues excluded for insufficient evidence, evidence gaps, checks run, checks not run, and remaining risks.
+17. Report created/updated docs, drift corrected, issues added to Backlog, potential issues excluded for insufficient evidence, evidence gaps, checks run, checks not run, and remaining risks.
 
 Run skill-local helpers by path relative to this skill directory:
 
@@ -55,4 +55,4 @@ python3 scripts/create_documentation_snapshot.py /path/to/unity-repo --dry-run
 
 ## Completion
 
-The task is complete only when the documentation contract is satisfied, `FEATURES.md` and `FUTURE.md` responsibilities are preserved, meaningful discovered issues are represented in `FUTURE.md`, and unresolved evidence gaps are explicitly reported. Never claim semantic correctness from structural validation alone.
+The task is complete only when the documentation contract is satisfied, `FEATURES.md` and `FUTURE.md` responsibilities are preserved, meaningful discovered issues are represented in `FUTURE.md` Backlog, and unresolved evidence gaps are explicitly reported. Never claim semantic correctness from structural validation alone.

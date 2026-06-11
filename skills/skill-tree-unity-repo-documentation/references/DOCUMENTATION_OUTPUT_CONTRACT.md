@@ -63,7 +63,7 @@ Live documents use stable names without timestamps or snapshot markers. Snapshot
 
 ## Issue Discovery
 
-Documentation work must inspect key implementation paths, tests, error handling, state transitions, persistence, mutation logic, and existing `FUTURE.md` entries. Add meaningful discovered issues to the active `FUTURE.md` backlog with evidence, affected paths/symbols, impact, suggested direction, acceptance criteria, and focused tests. Distinguish confirmed bugs, strongly suspected issues, documentation inconsistencies, and improvement opportunities.
+Documentation work must inspect key implementation paths, tests, error handling, state transitions, persistence, mutation logic, and existing `FUTURE.md` entries. Add meaningful discovered issues to the active `FUTURE.md` Backlog, not Pending Queue, with evidence, affected paths/symbols, impact, suggested direction, acceptance criteria, and focused tests. Distinguish confirmed bugs, strongly suspected issues, documentation inconsistencies, and improvement opportunities.
 
 ## `FUTURE.md` Queues
 
@@ -79,4 +79,4 @@ Documentation work must inspect key implementation paths, tests, error handling,
 
 ## Final Handoff
 
-Report created and updated files, optional documents and why, major verified findings, drift corrected, issues added to backlog, potential issues excluded for insufficient evidence, open questions, checks run, checks not run, risks, and a suggested commit message.
+Report created and updated files, optional documents and why, major verified findings, drift corrected, issues added to Backlog, potential issues excluded for insufficient evidence, open questions, checks run, checks not run, risks, and a suggested commit message.

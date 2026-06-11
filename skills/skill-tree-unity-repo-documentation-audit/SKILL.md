@@ -36,7 +36,7 @@ MUST NOT audit docs by comparing documents only. Verify substantial claims again
    - Historical docs: clearly marked as historical.
 5. Fix stale paths, renamed symbols, outdated behavior, contradictions, duplicate guidance, obsolete future sections in current-state docs, and unsupported claims.
 6. While inspecting code, identify meaningful issues: confirmed bugs, likely bugs, risky logic, documentation/code drift, missing validation, missing tests, error-handling gaps, security/data-safety concerns, maintainability problems, performance risks, and dead or misleading code.
-7. Add meaningful findings to active `FUTURE.md` backlog using repository task structure. Merge with existing tasks when same issue exists. Do not duplicate tasks.
+7. Add meaningful findings to active `FUTURE.md` Backlog using repository task structure. Do not add documentation/audit findings to Pending Queue. Merge with existing tasks when same issue exists. Do not duplicate tasks.
 8. Distinguish finding type: confirmed bug, strongly suspected issue, documentation inconsistency, or improvement opportunity. Include evidence, affected paths/symbols, impact, suggested direction, acceptance criteria, and focused tests where relevant.
 9. Do not change product code unless user explicitly requested implementation or a documentation-specific defect cannot be repaired otherwise.
 10. Run documentation validators when owner policy allows validation.
@@ -59,10 +59,11 @@ Final response MUST report:
 - Paths/symbols updated.
 - Contradictions resolved.
 - Backlog items added or merged.
+- Confirmation that documentation/audit findings were not added to Pending Queue.
 - Potential issues not added because evidence was insufficient.
 - Checks run and checks not run.
 - Required context inspected.
 
 ## Completion
 
-Complete only when straightforward documentation drift is fixed in place, meaningful discovered issues are represented in `FUTURE.md`, duplicate backlog entries are avoided, and remaining unverified claims are explicitly reported.
+Complete only when straightforward documentation drift is fixed in place, meaningful discovered issues are represented in `FUTURE.md` Backlog, duplicate backlog entries are avoided, and remaining unverified claims are explicitly reported.

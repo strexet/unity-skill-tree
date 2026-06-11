@@ -1008,12 +1008,12 @@ The skill must instruct the agent to:
 9. Keep `FEATURES.md` limited to current implemented or partial behavior.
 10. Put planned work, known bugs awaiting fixes, deferred investigations, and proposed improvements in `FUTURE.md`.
 11. Inspect key implementation paths, tests, error handling, state transitions, persistence, mutation logic, and existing `FUTURE.md` entries before finalizing documentation.
-12. Add meaningful discovered issues to `FUTURE.md` with evidence, affected paths/symbols, impact, suggested direction, acceptance criteria, and focused tests.
+12. Add meaningful discovered issues to the active `FUTURE.md` Backlog, not Pending Queue, with evidence, affected paths/symbols, impact, suggested direction, acceptance criteria, and focused tests.
 13. Distinguish confirmed bugs, strongly suspected issues, documentation inconsistencies, and improvement opportunities.
 14. Avoid modifying Unity behavior during documentation initialization.
 15. Run local documentation validation.
 16. Review the final diff.
-17. Report evidence gaps, drift corrected, issues added to backlog, potential issues excluded for insufficient evidence, checks run, and risks.
+17. Report evidence gaps, drift corrected, issues added to Backlog, potential issues excluded for insufficient evidence, checks run, and risks.
 
 It must instruct the agent to use the skill-local script by path relative to the skill directory, not by assuming the source repository layout.
 
@@ -1231,7 +1231,7 @@ The skill must:
 9. Enforce that `FUTURE.md` contains planned work, backlog, known bugs awaiting fixes, documentation improvements, proposed skills, refactoring plans, and deferred investigations.
 10. Mark historical documents clearly when they remain useful.
 11. While inspecting code, identify meaningful bugs, risky logic, missing tests, documentation/code drift, maintainability issues, and security/data-safety risks.
-12. Add meaningful findings to `FUTURE.md` using the same task-quality requirements as the documentation skill.
+12. Add meaningful findings to the active `FUTURE.md` Backlog, not Pending Queue, using the same task-quality requirements as the documentation skill.
 13. Merge with existing backlog entries and avoid duplicate tasks.
 14. Distinguish confirmed bugs, strongly suspected issues, documentation inconsistencies, and improvement opportunities.
 15. Produce an audit summary covering documents inspected, missing documents created, documents merged or role-corrected, drift corrected, paths/symbols updated, contradictions resolved, backlog items added, and unverified claims.
@@ -1313,6 +1313,8 @@ It must explicitly state:
 - no feature implementation occurs;
 - Backlog is not processed unless the user explicitly includes it;
 - a promoted task must be detailed enough to minimize unrelated modifications.
+- if an AI agent adds a new item to Pending Queue, it must use the nested Markdown pending task format from `REPO_INIT_INSTRUCTIONS.md`;
+- documentation or audit findings belong in Backlog, not Pending Queue.
 
 ## 11.4 Questions rule
 
